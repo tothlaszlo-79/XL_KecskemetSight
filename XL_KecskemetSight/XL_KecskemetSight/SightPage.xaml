@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XL_KecskemetSight.SightPage">
+
+    <StackLayout>
+        <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kecskem%C3%A9tv%C3%A1rosh%C3%A1z_l%C3%A9gifot%C3%B3.jpg/250px-Kecskem%C3%A9tv%C3%A1rosh%C3%A1z_l%C3%A9gifot%C3%B3.jpg"/>
+        <Label Text="Choose a sight to visit" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="Title"/>
+        <ListView x:Name="lvList" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" RowHeight="100" ItemSelected="lvList_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Image Source="{Binding Path=Image}" Aspect="AspectFit" HorizontalOptions="Start" Margin="5"/>
+                            <Label Text="{Binding Path=Name}" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>
